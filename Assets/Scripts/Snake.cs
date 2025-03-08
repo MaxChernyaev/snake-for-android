@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Snake : MonoBehaviour
 {
+    [SerializeField] ScoreManager scoreManager;
+
     // private Vector2 _direction = Vector2.up;
     // [SerializeField] private float _snakeSpeed = 0.3f;
 
@@ -45,6 +47,7 @@ public class Snake : MonoBehaviour
     {
         if (other.tag == "Wall"){
             transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            scoreManager.ResetScore();
         }
     }
 }

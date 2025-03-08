@@ -8,7 +8,6 @@ public class SwipeController : MonoBehaviour, IDragHandler, IBeginDragHandler
     [SerializeField] private Transform _snake;
 
     private Vector2 _direction = Vector2.up;
-    [SerializeField] private float _snakeSpeed = 0.3f;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -43,11 +42,6 @@ public class SwipeController : MonoBehaviour, IDragHandler, IBeginDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         // throw new System.NotImplementedException();
-    }
-
-    void Start()
-    {
-        Time.fixedDeltaTime = _snakeSpeed;
     }
 
     private void FixedUpdate()

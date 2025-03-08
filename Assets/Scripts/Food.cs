@@ -5,9 +5,11 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     [SerializeField] BoxCollider2D gridArea;
+    [SerializeField] ScoreManager scoreManager;
 
     private void Start()
     {
+        scoreManager.ResetScore();
         RandomizePosition();
     }
 
@@ -23,6 +25,7 @@ public class Food : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player"){
+            scoreManager.IncreaseScore();
             RandomizePosition();
         }
     }
