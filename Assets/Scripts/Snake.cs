@@ -40,4 +40,11 @@ public class Snake : MonoBehaviour
     //         0.0f
     //     );
     // }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Wall"){
+            transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        }
+    }
 }

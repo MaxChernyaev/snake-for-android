@@ -16,22 +16,26 @@ public class SwipeController : MonoBehaviour, IDragHandler, IBeginDragHandler
         {
             if (eventData.delta.x > 0)
             {
-                _direction = Vector2.right;
+                if (_direction != Vector2.left)
+                    _direction = Vector2.right;
             }
             else
             {
-                _direction = Vector2.left;
+                if (_direction != Vector2.right)
+                    _direction = Vector2.left;
             }
         }
         else
         {
             if (eventData.delta.y > 0)
             {
-                _direction = Vector2.up;
+                if (_direction != Vector2.down)
+                    _direction = Vector2.up;
             }
             else
             {
-                _direction = Vector2.down;
+                if (_direction != Vector2.up)
+                    _direction = Vector2.down;
             }
         }
     }
